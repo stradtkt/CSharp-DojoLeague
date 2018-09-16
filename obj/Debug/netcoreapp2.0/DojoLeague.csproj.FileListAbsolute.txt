@@ -1,0 +1,11 @@
+E:\csharp\KevinStradtman\DojoLeague\obj\Debug\netcoreapp2.0\DojoLeague.csprojResolveAssemblyReference.cache
+E:\csharp\KevinStradtman\DojoLeague\obj\Debug\netcoreapp2.0\DojoLeague.csproj.CoreCompileInputs.cache
+E:\csharp\KevinStradtman\DojoLeague\obj\Debug\netcoreapp2.0\DojoLeague.AssemblyInfoInputs.cache
+E:\csharp\KevinStradtman\DojoLeague\obj\Debug\netcoreapp2.0\DojoLeague.AssemblyInfo.cs
+E:\csharp\KevinStradtman\DojoLeague\bin\Debug\netcoreapp2.0\DojoLeague.deps.json
+E:\csharp\KevinStradtman\DojoLeague\bin\Debug\netcoreapp2.0\DojoLeague.runtimeconfig.json
+E:\csharp\KevinStradtman\DojoLeague\bin\Debug\netcoreapp2.0\DojoLeague.runtimeconfig.dev.json
+E:\csharp\KevinStradtman\DojoLeague\bin\Debug\netcoreapp2.0\DojoLeague.dll
+E:\csharp\KevinStradtman\DojoLeague\bin\Debug\netcoreapp2.0\DojoLeague.pdb
+E:\csharp\KevinStradtman\DojoLeague\obj\Debug\netcoreapp2.0\DojoLeague.dll
+E:\csharp\KevinStradtman\DojoLeague\obj\Debug\netcoreapp2.0\DojoLeague.pdb

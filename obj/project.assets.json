@@ -12741,11 +12741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\csharp\\KevinStradtman\\DojoLeague\\DojoLeague.csproj",
+      "projectUniqueName": "E:\\csharp\\KevinStradtman\\DojoLeague\\DojoLeague.csproj",
       "projectName": "DojoLeague",
-      "projectPath": "e:\\csharp\\KevinStradtman\\DojoLeague\\DojoLeague.csproj",
+      "projectPath": "E:\\csharp\\KevinStradtman\\DojoLeague\\DojoLeague.csproj",
       "packagesPath": "C:\\Users\\strad\\.nuget\\packages\\",
-      "outputPath": "e:\\csharp\\KevinStradtman\\DojoLeague\\obj\\",
+      "outputPath": "E:\\csharp\\KevinStradtman\\DojoLeague\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
