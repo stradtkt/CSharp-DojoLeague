@@ -1,0 +1,63 @@
+@model DojoLeague.Models.Dojo
+@{
+    ViewData["Title"] = "Dojo";
+}
+
+<div class="row">
+    <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 offset-1 mt-5 mb-5">
+        <div class="card text-center">
+            <div class="card-header mt-2">
+                <h3>@ViewBag.dojo.name</h3>
+            </div>
+            <div class="card-body">
+                <p class="lead">@ViewBag.dojo.location</p>
+                <p class="card-text">@ViewBag.dojo.description</p>
+            </div>
+            <div class="card-footer text-muted mb-2">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <h3 class="text-center">Dojo Ninjas</h3>
+        <table class="table table-hover text-center">
+            <thead class="bg-info text-white">
+                <tr>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var n in ViewBag.ninjas)
+                {
+                    <tr>
+                        <td><a href="Ninja/@n.ninja_id" class="btn btn-round btn-info">@n.name</a></td>
+                        <td><a href="@ViewBag.dojo.dojo_id/Banish/@n.ninja_id" class="btn btn-round btn-danger">Banish</a></td>
+                    </tr>   
+                }
+            </tbody>
+        </table>   
+    </div>
+    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <h3 class="text-center">Rogues</h3>
+        <table class="table table-hover text-center">
+            <thead class="bg-info text-white">
+                <tr>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var n in ViewBag.rogues)
+                {
+                    <tr>
+                        <td><a href="Ninja/@n.ninja_id" class="btn btn-round btn-info">@n.name</a></td>
+                        <td><a href="@ViewBag.dojo.dojo_id/Recruit/@n.ninja_id" class="btn btn-round btn-success">Recruit</a></td>
+                    </tr>   
+                }
+            </tbody>
+        </table> 
+    </div>
+</div>

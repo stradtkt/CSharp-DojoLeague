@@ -1,0 +1,56 @@
+@model DojoLeague.Models.Dojo
+@{
+    ViewData["Title"] = "Dojos";
+}
+
+<div class="row">
+    <div class="col-6 col-md-6 col-lg-6 col-xl-6 mt-5 mb-5">
+        <h3 class="text-center">Dojos</h3>
+        <table class="table table-hover text-center">
+            <thead class="bg-info text-white">
+                <tr>
+                    <th>Dojo Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var d in ViewBag.dojos)
+                {
+                    @if(d.dojo_id == 3)
+                    {
+                        <td>@d.name</td>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td><a href="Dojo/@d.dojo_id">@d.name</a></td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-6 col-md-6 col-lg-6 col-xl-6 mt-5 mb-5">
+        <h3 class="text-center">Register A Dojo</h3>
+        <form asp-action="AddDojo" asp-controller="Home" method="POST">
+            <div class="form-group">
+                <div class="bg-danger">
+                    <span asp-validation-for="name"></span>
+                </div><br>
+                <input asp-for="name" class="form-control" placeholder="Dojo Name">
+            </div>
+            <div class="form-group">
+                <div class="bg-danger">
+                    <span asp-validation-for="location"></span>
+                </div><br>
+                <input asp-for="location" class="form-control" placeholder="Location">
+            </div>
+            <div class="form-group">
+                <div class="bg-danger">
+                    <span asp-validation-for="description"></span>
+                </div><br>
+                <textarea asp-for="description" cols="30" rows="10" class="form-control" placeholder="Description"></textarea>
+            </div>
+            <input type="submit" value="Add Dojo" class="btn btn-round btn-success">
+        </form>
+    </div>
+</div>

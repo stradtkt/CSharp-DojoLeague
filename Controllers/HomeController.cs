@@ -30,6 +30,8 @@ namespace DojoLeague.Controllers
         {
             List<Dojo> Dojos = _dContext.dojos.ToList();
             List<Ninja> Ninjas = _dContext.ninjas.Include(d => d.Dojos).ToList();
+            List<Ninja> rogues = _dContext.ninjas.Include(d => d.Dojos).Where(d => d.dojo_id == 3).ToList();
+            ViewBag.rogues = rogues;
             ViewBag.dojos = Dojos;
             ViewBag.ninjas = Ninjas;
             return View();
@@ -71,6 +73,36 @@ namespace DojoLeague.Controllers
             ViewBag.ninja = ninja;
             return View();
         }
+
+        [HttpGet("Dojo/{dojo_id}")]
+        public IActionResult Dojo(int dojo_id)
+        {
+            Dojo dojo = _dContext.dojos.Where(d => d.dojo_id == dojo_id).SingleOrDefault();
+            List<Ninja> ninjas = _dContext.ninjas.Include(d => d.Dojos).Where(d => d.dojo_id == dojo_id).ToList();
+            List<Ninja> rogues = _dContext.ninjas.Include(d => d.Dojos).Where(d => d.dojo_id == 3).ToList();
+            ViewBag.rogues = rogues;
+            ViewBag.ninjas = ninjas;
+            ViewBag.dojo = dojo;
+            return View();
+        }
+        [Route("Dojo/{dojo_id}/Banish/{ninja_id}")]
+        public IActionResult Banish(int dojo_id, int ninja_id)
+        {
+            Ninja ninja = _dContext.ninjas.SingleOrDefault(n => n.ninja_id == ninja_id);
+            ninja.dojo_id = 3;
+            _dContext.SaveChanges();
+            return Redirect("/Dojo/" + dojo_id);
+        }
+
+        [Route("Dojo/{dojo_id}/Recruit/{ninja_id}")]
+        public IActionResult Recruit(int dojo_id, int ninja_id)
+        {
+            Ninja ninja = _dContext.ninjas.SingleOrDefault(n => n.ninja_id == ninja_id);
+            ninja.dojo_id = dojo_id;
+            _dContext.SaveChanges();
+            return Redirect("/Dojo/"+ dojo_id);
+        }
+
 
         public IActionResult Error()
         {

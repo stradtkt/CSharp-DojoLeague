@@ -1,0 +1,21 @@
+@model DojoLeague.Models.Ninja
+@{
+    ViewData["Title"] = "Ninja";
+}
+
+<div class="row">
+    <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 offset-1 mt-5 mb-5">
+        <div class="card text-center">
+            <div class="card-header mt-2">
+                <h3>@ViewBag.ninja.name</h3>
+            </div>
+            <div class="card-body">
+                <p class="lead">Level: @ViewBag.ninja.level</p>
+                <p class="card-text">@ViewBag.ninja.description</p>
+                <a href="Dojo/@ViewBag.ninja.Dojos.dojo_id" class="btn btn-success">@ViewBag.ninja.Dojos.name</a>
+            </div>
+            <div class="card-footer text-muted mb-2">
+            </div>
+        </div>
+    </div>
+</div>

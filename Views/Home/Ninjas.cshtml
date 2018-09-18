@@ -4,7 +4,8 @@
 }
 
 <div class="row">
-    <div class="col-6 col-md-6 col-lg-6 col-xl-6">
+    <div class="col-6 col-md-6 col-lg-6 col-xl-6 mt-5 mb-5">
+        <h3 class="text-center">Ninjas</h3>
         <table class="table table-hover text-center">
             <thead class="bg-info text-white">
                 <tr>
@@ -16,16 +17,23 @@
                 @foreach (var n in ViewBag.ninjas)
                 {
                     <tr>
-                        <td><a href="">@n.name</a></td>
-                        <td><a href="">@n.Dojos.location</a></td>
+                        <td><a href="Ninja/@n.ninja_id">@n.name</a></td>
+                        @if(n.Dojos.dojo_id == 3)
+                        {
+                            <td>@n.Dojos.name</td>
+                        }
+                        else
+                        {
+                            <td><a href="Dojo/@n.Dojos.dojo_id">@n.Dojos.location</a></td>
+                        }
                     </tr>
                 }
             </tbody>
         </table>
     </div>
-    <div class="col-6 col-md-6 col-lg-6 col-xl-6">
+    <div class="col-6 col-md-6 col-lg-6 col-xl-6 mt-5 mb-5">
         <h3 class="text-center">Register A Ninja</h3>
-        <form asp-action="RegisterANinja" asp-controller="Home" method="POST">
+        <form asp-action="AddNinja" asp-controller="Home" method="POST">
             <div class="form-group">
                 <div class="bg-danger">
                     <span asp-validation-for="name"></span>
